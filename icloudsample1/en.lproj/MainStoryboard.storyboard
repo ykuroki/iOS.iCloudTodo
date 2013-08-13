@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--I Cloud Sample View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="iCloudSampleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="jDH-i8-Zaw">
+                                <rect key="frame" x="0.0" y="44" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="akf-BZ-pGt"/>
+                                    <outlet property="delegate" destination="2" id="HKq-lx-vDO"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="Da2-d0-Y9I">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="iCloud ToDo List" id="WJ3-LA-FF0">
+                                        <barButtonItem key="leftBarButtonItem" title="テキスト" id="ajc-rk-dTo">
+                                            <connections>
+                                                <action selector="addDocumentAction:" destination="2" id="TtG-Za-Sdf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="書く" id="GOc-1j-cKr">
+                                            <connections>
+                                                <action selector="postBtnAction:" destination="2" id="SBf-ub-bWd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainTableView" destination="jDH-i8-Zaw" id="n8f-N2-Zvv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="196" y="-59"/>
+        </scene>
+        <!--I Cloud Post View Controller-->
+        <scene sceneID="78B-29-Gqp">
+            <objects>
+                <viewController storyboardIdentifier="iCloudPostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7fF-jt-ULR" customClass="iCloudPostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="73g-jd-dJy">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="UCf-w8-9eT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="なにすんの？" id="EQC-x5-oax">
+                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="41W-yP-clo">
+                                            <connections>
+                                                <action selector="cancelBtnAction:" destination="7fF-jt-ULR" id="WIa-0F-5aT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="add" id="WfL-LF-T1v">
+                                            <connections>
+                                                <action selector="addBtnAction:" destination="7fF-jt-ULR" id="Qhl-GB-Gaw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="xtC-U8-PkS">
+                                <rect key="frame" x="0.0" y="44" width="320" height="338"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="postTxtArea" destination="xtC-U8-PkS" id="3Ri-Y5-kvh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhd-pe-raM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="-59"/>
+        </scene>
+        <!--I Cloud Document View Controller-->
+        <scene sceneID="Lce-vf-NJ3">
+            <objects>
+                <viewController restorationIdentifier="iCloudDocumentViewController" storyboardIdentifier="iCloudDocumentViewController" id="nCJ-1C-8XX" customClass="iCloudDocumentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rhn-5o-Y1X">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="665-av-5yi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="566" y="599"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
